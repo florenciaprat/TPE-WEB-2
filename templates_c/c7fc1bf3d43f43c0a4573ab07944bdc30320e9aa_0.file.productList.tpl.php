@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 22:39:18
+/* Smarty version 4.2.1, created on 2022-10-11 18:13:47
   from 'C:\xampp\htdocs\Skincare\templates\productList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63408e76d13c17_87642517',
+  'unifunc' => 'content_6345963b29aeb2_99007932',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c7fc1bf3d43f43c0a4573ab07944bdc30320e9aa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\productList.tpl',
-      1 => 1665175155,
+      1 => 1665504790,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63408e76d13c17_87642517 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6345963b29aeb2_99007932 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -63,7 +63,7 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
           <?php } else { ?>
           <td><a class="btn btn-outline-danger" href="deleteProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value->product_ID;?>
 ">Borrar</a> </td>
-          <td><a class="btn btn-outline-success" href="updateProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value->product_ID;?>
+          <td><a class="btn btn-outline-success" href="editForm/<?php echo $_smarty_tpl->tpl_vars['product']->value->product_ID;?>
 ">Editar</a></td>
         <?php }?>
         

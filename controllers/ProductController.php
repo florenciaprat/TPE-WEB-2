@@ -62,6 +62,21 @@ class ProductController{
     $brands = $this->brandModel->getAllBrands();
     $product = $this->model->getProduct($id);
     $this->views->editProduct($product, $brands);
+    
+   }
+
+   function editProduct($id){
+    $this->authHelper->checkLoggedIn();
+    if((isset($_POST['name'])) && (isset($_POST['milliliters'])) && (isset($_POST['price'])) && (isset($_POST['brand_ID']))){
+        $name = $_POST['name'];
+        $milliliters = $_POST['milliliters'];
+        $price = $_POST['price'];
+        $brand_ID = $_POST['brand_ID'];
+        $product_ID = $id;
+        $id = $this->model->editProduct($name, $milliliters, $price, $brand_ID, $product_ID);
+        header("Location: ".BASE_URL);
+    }
+    
    }
 
   

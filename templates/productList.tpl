@@ -26,7 +26,7 @@
         {if !isset($smarty.session.USER_ID)} 
           {else}
           <td><a class="btn btn-outline-danger" href="deleteProduct/{$product->product_ID}">Borrar</a> </td>
-          <td><a class="btn btn-outline-success" href="updateProduct/{$product->product_ID}">Editar</a></td>
+          <td><a class="btn btn-outline-success" href="editForm/{$product->product_ID}">Editar</a></td>
         {/if}
         
         </tr>

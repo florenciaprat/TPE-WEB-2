@@ -34,7 +34,12 @@ class ProductModel {
 
 
     }
-    
+
+    public function editProduct($name, $milliliters, $price, $brand_ID, $product_ID){
+    $query = $this->db->prepare('UPDATE products SET name = ?, milliliters = ?, price = ?, brand_ID = ? WHERE product_ID = ?');
+    $query->execute([$name, $milliliters, $price, $brand_ID, $product_ID]);
+}
+
 
    
    

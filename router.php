@@ -53,10 +53,23 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
         $brandController = new BrandController();
         $brandController->deleteBrand($params[1]);
         break;
-    case 'updateProduct':
+    case 'editForm':
         $productController = new ProductController();
         $productController->updateProduct($params[1]);
         break;
+    case 'editBrandForm':
+        $brandController = new BrandController();
+        $brandController->updateBrand($params[1]);
+        break;
+    case 'editProduct':
+        $productController = new ProductController();
+        $productController->editProduct($params[1]);
+        break;
+    case 'editBrand':
+        $brandController = new BrandController();
+        $brandController->editBrand($params[1]);
+        break;
+
     case 'form':
         $brandController = new BrandController();
         $brandController->getId();

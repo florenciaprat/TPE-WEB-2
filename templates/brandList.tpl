@@ -25,7 +25,7 @@
         {if !isset($smarty.session.USER_ID)} 
           {else}
           <td><a class="btn btn-outline-danger" href="deleteBrand/{$brand->brand_ID}">Borrar</a> </td>
-          <td><a class="btn btn-outline-success" href="updateBrand/{$brand->brand_ID}">Editar</a></td>
+          <td><a class="btn btn-outline-success" href="editBrandForm/{$brand->brand_ID}">Editar</a></td>
         {/if}
         </tr>
     {/foreach}

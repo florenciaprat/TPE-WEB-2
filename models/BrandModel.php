@@ -19,6 +19,12 @@ public function getAllBrands() {
     
     return $brands;
 }
+public function getBrand($id){
+    $query = $this->db->prepare("SELECT * from brands WHERE brand_ID = ?");
+    $query->execute(array($id));
+    $brand = $query->fetch(PDO::FETCH_OBJ);
+    return $brand;
+}
 
 public function getProducts($id){
     $query = $this->db->prepare("SELECT a.* FROM products a INNER JOIN brands b ON a.brand_ID = b.brand_ID WHERE a.brand_ID = ?");
@@ -40,8 +46,11 @@ public function InsertBrand($name, $country, $foundation, $website){
     $query->execute([$name, $country, $foundation, $website]);
 
     return $this->db->lastInsertId();
-
-
-
 }
+
+public function editProduct($name, $country, $foundation, $website, $brand_ID){
+    $query = $this->db->prepare('UPDATE brands SET name = ?, country = ?, foundation = ?, website = ? WHERE brand_ID = ?');
+    $query->execute([$name, $country, $foundation, $website, $brand_ID]);
+}
+
 }

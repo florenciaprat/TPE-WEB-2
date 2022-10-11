@@ -49,9 +49,9 @@ function addBrand() {
 
 
 
-    function deleteBrand($params = null){
+    function deleteBrand($id){
         
-        if((isset($params[':ID']) && !is_null($params))){
+        if((isset($params[$id]))){
             $room_id = $params[':ID'];
 
             $action = null;
@@ -59,18 +59,28 @@ function addBrand() {
             
             if($action>0){
                 $this->views->showHomeLocation();
-            }else{
-                $this->views->Error("Disculpe! No se puede eliminar la imagen");
             }   
         } else{ 
             $this->views->Error("Para borrar la sala, primero debe eliminar una película");
         }
     }
-            
-          //function updateBrand($id){
-    //$this->authHelper->checkLoggedIn();
+    
+    function updateBrand($id){
+        $this->authHelper->checkLoggedIn();
+        $brand = $this->model->getBrand($id);
+        $this->views->showFormEdit($brand);
+    }
 
-    //$this->model->updateBrandFromDB($id);
-    //$this->view->showHomeLocation();
-//   }
+    function editBrand ($id){
+        $this->authHelper->checkLoggedIn();
+    if((isset($_POST['name'])) && (isset($_POST['country'])) && (isset($_POST['foundation'])) && (isset($_POST['website']))){
+        $name = $_POST['name'];
+        $country = $_POST['country'];
+        $foundation = $_POST['foundation'];
+        $website = $_POST['website'];
+        $brand_ID =$id;
+        $id = $this->model->editProduct($name, $country, $foundation, $website, $brand_ID);
+        header("Location: ".BASE_URL. 'brands');
+    }
+  }
 }

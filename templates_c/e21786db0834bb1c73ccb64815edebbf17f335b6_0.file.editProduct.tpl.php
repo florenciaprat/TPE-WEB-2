@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 22:48:20
+/* Smarty version 4.2.1, created on 2022-10-11 18:23:56
   from 'C:\xampp\htdocs\Skincare\templates\editProduct.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634090949f9bc2_68511145',
+  'unifunc' => 'content_6345989cc737d1_92388565',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e21786db0834bb1c73ccb64815edebbf17f335b6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\editProduct.tpl',
-      1 => 1665175695,
+      1 => 1665505433,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634090949f9bc2_68511145 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6345989cc737d1_92388565 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="col-md-4">
     <h2><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h2>
-    <form class ="form-alta" action="editProduct" method="POST">
+    <form class ="form-alta" action="../editProduct/<?php echo $_smarty_tpl->tpl_vars['product']->value->product_ID;?>
+" method="POST">
     <a href="../home" class="btn btn-primary">Volver al inicio</a> 
         <div class="formulario"><p>Name: </p><input value="<?php echo $_smarty_tpl->tpl_vars['product']->value->name;?>
 " type="text" name="name" id="name" required></div>
@@ -36,7 +37,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 " type="number" name="milliliters" id="milliliters" required></div>
         <div class="formulario"><p>Price: </p><input value="<?php echo $_smarty_tpl->tpl_vars['product']->value->price;?>
 " type="number" name="price" id="price" required></div>
-        <div class="formulario"><p>Brand: </p><select name="brand_ID" id="">
+        <div class="formulario"><p>Brand: </p><select name="brand_ID" id="brand_ID">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['marca']->value, 'brand');
 $_smarty_tpl->tpl_vars['brand']->do_else = true;

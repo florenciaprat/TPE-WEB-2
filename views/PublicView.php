@@ -47,6 +47,12 @@ class PublicView{
     $this->smarty->display('./templates/editProduct.tpl');
 
    }
+   function showFormEdit($brand){
+    $this->smarty->assign('titulo', 'Edit the brand');
+    $this->smarty->assign('brand', $brand);
+    $this->smarty->display('./templates/editBrand.tpl');
+
+   }
    
    function showFormLogin($error = null) {
     $this->smarty->assign("title", 'Log in');

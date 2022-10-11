@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 20:59:21
+/* Smarty version 4.2.1, created on 2022-10-11 18:48:07
   from 'C:\xampp\htdocs\Skincare\templates\brandList.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634077097e32a6_07050904',
+  'unifunc' => 'content_63459e4794d326_08178097',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8006e745e0f5b6722a498cc1fe44a1766c637160' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\brandList.tpl',
-      1 => 1665169156,
+      1 => 1665506873,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_634077097e32a6_07050904 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63459e4794d326_08178097 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -62,7 +62,7 @@ $_smarty_tpl->tpl_vars['brand']->do_else = false;
           <?php } else { ?>
           <td><a class="btn btn-outline-danger" href="deleteBrand/<?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_ID;?>
 ">Borrar</a> </td>
-          <td><a class="btn btn-outline-success" href="updateBrand/<?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_ID;?>
+          <td><a class="btn btn-outline-success" href="editBrandForm/<?php echo $_smarty_tpl->tpl_vars['brand']->value->brand_ID;?>
 ">Editar</a></td>
         <?php }?>
         </tr>
