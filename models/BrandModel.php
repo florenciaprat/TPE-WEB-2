@@ -35,12 +35,11 @@ public function getProducts($id){
 
 }
 
-public function deleteBrandFromDB($id){
-    $query = $this->db->prepare("DELETE FROM brands WHERE brand_ID=?");
-    $action=$query->execute(array($id));
-
-    return $action;
+public function deleteBrandById($id){
+    $query = $this->db->prepare("DELETE FROM brands WHERE brand_ID = ?");
+    $query->execute(array($id));    
 }
+
 public function InsertBrand($name, $country, $foundation, $website){
     $query = $this->db->prepare("INSERT INTO brands (name, country, foundation, website) VALUES (?, ?, ?, ?)");
     $query->execute([$name, $country, $foundation, $website]);

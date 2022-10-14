@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <div class="col-md-4">
     <h2>{$titulo}</h2>
-    <form class ="form-alta" action="addProduct" method="POST">
+    <form class ="form-alta" action="add-product" method="POST">
         <div class="formulario"><input placeholder="product name" type="text" name="name" id="name" required></div>
         <div class="formulario"><input placeholder="milliliters" type="number" name="milliliters" id="milliliters" required></div>
         <div class="formulario"><input placeholder="price" type="number" name="price" id="price" required></div>
@@ -11,7 +11,7 @@
             {/foreach}
             </select>
         </div>
-        <div class="formulario"><button class="btn btn-primary"> Add </button></div>
+        <div class="formulario"><button type="submit" class="btn btn-primary"> Add </button></div>
     </form>
 </div>
 {include file="footer.tpl"}

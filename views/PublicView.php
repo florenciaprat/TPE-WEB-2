@@ -12,8 +12,9 @@ class PublicView{
         $this->smarty->assign('products', $products);
         $this->smarty->display('templates/productList.tpl');
     }
-    function showBrands($brands){
+    function showBrands($brands, $error){
         $this->smarty->assign('cafe', $brands);
+        $this->smarty->assign('error', $error);
         $this->smarty->display('templates/brandList.tpl');
         
     }
@@ -35,11 +36,7 @@ class PublicView{
     $this->smarty->assign('marquita', $brand);
     $this->smarty->display('templates/formAdd.tpl');
    }
-   function Error($mensaje = ''){
-    $this->smarty->assign('titulo', 'Error');
-    $this->smarty->assign('mensaje', $mensaje);
-    $this->smarty->display('./templates/error.tpl');
-}
+  
    function editProduct($product, $brands){
     $this->smarty->assign('titulo', 'Edit the product');
     $this->smarty->assign('product', $product);
@@ -62,6 +59,10 @@ class PublicView{
 function showForm(){
     $this->smarty->assign('titulo', 'Add your brand');
     $this->smarty->display('templates/addBrand.tpl');
+}
+function showErrorDefault(){
+    $this->smarty->assign('error', '404 page not found');
+    $this->smarty->display('template/errordefault.tpl');
 }
 
 }?>

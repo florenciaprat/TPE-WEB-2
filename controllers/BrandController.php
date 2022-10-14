@@ -11,15 +11,15 @@ class BrandController{
 
     function __construct(){
         $this->model = new BrandModel();
-        $this->views =new publicView();
         $this->authHelper = new AuthHelper();
+        $this->views =new publicView($this->authHelper->getUser());
+
         
     }
 
     function showBrands(){
-        session_start();
         $brands = $this->model->getAllBrands();
-        $this->views->showBrands($brands);
+        $this->views->showBrands($brands, $error = false);
     }
     function viewBrandProducts($id){
         $brandProducts = $this-> model->getProducts($id);
@@ -27,17 +27,16 @@ class BrandController{
 
     }
 function getId(){
-    $this->authHelper->checkLoggedIn();
     $brands = $this-> model->getAllBrands();
     $this->views->getBrand($brands);
     return;
     
 }
 function showForm(){
-    $this->authHelper->checkLoggedIn();
     $this->views->showForm();
 }
 function addBrand() {
+    $this->authHelper->checkLoggedIn();
         // TODO: validar entrada de datos
      $name = $_POST['name'];
      $country = $_POST['country'];
@@ -50,23 +49,20 @@ function addBrand() {
 
 
     function deleteBrand($id){
-        
-        if((isset($params[$id]))){
-            $room_id = $params[':ID'];
+        $this->authHelper->checkLoggedIn();
 
-            $action = null;
-            $action = $this->roomModel->deleteRoomId($room_id);    
+        try{
             
-            if($action>0){
-                $this->views->showHomeLocation();
-            }   
-        } else{ 
-            $this->views->Error("Para borrar la sala, primero debe eliminar una película");
+            $this->model->deleteBrandById($id);
+            header("Location: " . BASE_URL . 'brands');
+
+        }catch(Exception $e){
+            $brands = $this->model->getAllBrands();
+            $this->views->showBrands($brands, "No se puede eliminar la marca ya que esta tiene productos asociados, elimine primero el producto.");
         }
     }
     
     function updateBrand($id){
-        $this->authHelper->checkLoggedIn();
         $brand = $this->model->getBrand($id);
         $this->views->showFormEdit($brand);
     }

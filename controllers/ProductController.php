@@ -10,31 +10,27 @@ class ProductController{
     private $model;
     private $views;
     private $brandModel;
-    private $authHelper;
+    
     
     function __construct(){
         $this->model = new ProductModel();
-        $this->views =new PublicView();
         $this->brandModel = new BrandModel();
         $this->authHelper = new AuthHelper();
+        $this->views =new PublicView($this->authHelper->getUser());
         
     }
 
-    function showHome(){
-        session_start();
-         $products = $this->model->getAllProducts();
+    function showHome(){   
+        $products = $this->model->getAllProducts();
         $this->views->showProducts($products);
         
     }
     
 
-    function viewProduct($id){
-        $this->authHelper->checkLoggedIn();
-
+    function viewProduct($id){  
         $product = $this-> model->getProduct($id);
         $this->views->showProduct($product);
-        
-
+    
     }
     function addProduct() {
         $this->authHelper->checkLoggedIn();
@@ -58,7 +54,6 @@ class ProductController{
 
 
    function updateProduct($id){
-    $this->authHelper->checkLoggedIn();
     $brands = $this->brandModel->getAllBrands();
     $product = $this->model->getProduct($id);
     $this->views->editProduct($product, $brands);
@@ -77,6 +72,10 @@ class ProductController{
         header("Location: ".BASE_URL);
     }
     
+   }
+
+   function showErrorDefault(){
+     $this->views->showErrorDefault();
    }
 
   

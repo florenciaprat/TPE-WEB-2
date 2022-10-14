@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-07 21:57:10
+/* Smarty version 4.2.1, created on 2022-10-14 19:16:50
   from 'C:\xampp\htdocs\Skincare\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63408496a1cc21_27390001',
+  'unifunc' => 'content_6349998260cbf6_83513483',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5ab5ea98b7e9b7c5ab9834926d31bb2aa60faa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\header.tpl',
-      1 => 1665172462,
+      1 => 1665767806,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63408496a1cc21_27390001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6349998260cbf6_83513483 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
     <head>
@@ -37,20 +37,20 @@ css/styles.css" rel="stylesheet">
             <body>
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Skicare</a>
+                    <a class="navbar-brand" href="home">Skincare</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <a class="nav-link active" aria-current="page" href="home">Home</a>
-                            <a class="nav-link" href="brands">Marcas</a>
+                            <a class="nav-link" href="brands">Brands</a>
                            
                             
                             <?php if (!(isset($_SESSION['USER_ID']))) {?>
                                 <a class="nav-link" href="login" >Login</a>
                               <?php } else { ?>
                                 <a class="nav-link" href="form" >Add product</a>
-                                <a class="nav-link" href="showForm" >Add brand</a>
+                                <a class="nav-link" href="show-form" >Add brand</a>
 
                                 <a class="nav-link" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
 )</a>                 

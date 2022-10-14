@@ -28,3 +28,6 @@ input, select{
 body{
     background-image: url(../img/si.png);
 }
+.error{
+    background-color: red;
+}

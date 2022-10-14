@@ -25,55 +25,6 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
         $productController = new ProductController();
         $productController-> showHome();
         break;
-    case 'brands':
-        $brandController = new BrandController();
-        $brandController->showBrands();
-        break;
-    case 'viewProduct':
-        $productController = new ProductController();
-        $productController->viewProduct($params[1]);
-        break;
-    case 'deleteProduct':
-        $productController = new ProductController();
-        $productController->deleteProduct($params[1]);
-        break;
-    case 'addProduct':
-        $productController = new ProductController();
-        $productController->addProduct();
-        break;
-    case 'addBrand':
-        $brandController = new BrandController();
-        $brandController->addBrand();
-        break;
-    case 'showForm':
-        $brandController = new BrandController();
-        $brandController->showForm();
-        break;
-    case 'deleteBrand':
-        $brandController = new BrandController();
-        $brandController->deleteBrand($params[1]);
-        break;
-    case 'editForm':
-        $productController = new ProductController();
-        $productController->updateProduct($params[1]);
-        break;
-    case 'editBrandForm':
-        $brandController = new BrandController();
-        $brandController->updateBrand($params[1]);
-        break;
-    case 'editProduct':
-        $productController = new ProductController();
-        $productController->editProduct($params[1]);
-        break;
-    case 'editBrand':
-        $brandController = new BrandController();
-        $brandController->editBrand($params[1]);
-        break;
-
-    case 'form':
-        $brandController = new BrandController();
-        $brandController->getId();
-        break;
     case 'login':
         $authController= new AuthController();
         $authController->showFormLogin();
@@ -86,12 +37,60 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
         $authController= new AuthController();
         $authController->logout();
         break;
-    
-    case 'viewBrandProducts':
+    case 'view-product':
+        $productController = new ProductController();
+        $productController->viewProduct($params[1]);
+        break;
+    case 'delete-product':
+        $productController = new ProductController();
+        $productController->deleteProduct($params[1]);
+        break;
+    case 'add-product':
+        $productController = new ProductController();
+        $productController->addProduct();
+        break;
+    case 'form':
+        $brandController = new BrandController();
+        $brandController->getId();
+        break;
+    case 'add-brand':
+        $brandController = new BrandController();
+        $brandController->addBrand();
+        break;
+    case 'edit-form':
+        $productController = new ProductController();
+        $productController->updateProduct($params[1]);
+        break;
+    case 'edit-product':
+        $productController = new ProductController();
+        $productController->editProduct($params[1]);
+        break;
+    case 'brands':
+        $brandController = new BrandController();
+        $brandController->showBrands();
+        break;
+     case 'show-form':
+        $brandController = new BrandController();
+        $brandController->showForm();
+        break;
+    case 'delete-brand':
+        $brandController = new BrandController();
+        $brandController->deleteBrand($params[1]);
+        break;
+    case 'edit-brand-form':
+        $brandController = new BrandController();
+        $brandController->updateBrand($params[1]);
+        break;
+    case 'edit-brand':
+        $brandController = new BrandController();
+        $brandController->editBrand($params[1]);
+        break;
+    case 'view-brand-products':
         $brandController = new BrandController();
         $brandController->viewBrandProducts($params[1]);
         break;
      default:
-    echo ('404 page not found');
-    break;
+        $productController=new ProductController();
+        $productController->showErrorDefault();
+        break;
    }
