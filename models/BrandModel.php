@@ -13,9 +13,7 @@ public function __construct() {
 public function getAllBrands() {
     $query = $this->db->prepare("SELECT * FROM brands");
     $query->execute();
-
-    // 3. obtengo los resultados
-    $brands = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+    $brands = $query->fetchAll(PDO::FETCH_OBJ);
     
     return $brands;
 }
@@ -29,7 +27,7 @@ public function getBrand($id){
 public function getProducts($id){
     $query = $this->db->prepare("SELECT a.* FROM products a INNER JOIN brands b ON a.brand_ID = b.brand_ID WHERE a.brand_ID = ?");
     $query->execute(array($id));
-    $products = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+    $products = $query->fetchAll(PDO::FETCH_OBJ);
     
     return $products;
 

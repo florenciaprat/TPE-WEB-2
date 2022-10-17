@@ -6,6 +6,6 @@
     <li class="list-group-item list-group-item-success">{$product->name} </li>
     {/foreach} 
 </ul>
-<a href="../brands" class="btn btn-outline-success" >Volver a las marcas</a>
+<a href="brands" class="btn btn-outline-success" >Volver a las marcas</a>
 
 {include file="footer.tpl"}

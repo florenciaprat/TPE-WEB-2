@@ -1,7 +1,5 @@
 {include file="header.tpl"}
 
-
-<!-- tabla de productos -->
 <table class="table">
   <thead>
       <tr>

@@ -23,10 +23,17 @@
 
         }
         function viewBrandProducts($id){
-            $brandProducts = $this-> model->getProducts($id);
-            $brand = $this-> model ->getBrand($id);
-            $this->view->showBrandProducts($brandProducts , $brand);
-
+            
+            
+                $brandProducts = $this-> model->getProducts($id);
+                $brand = $this-> model ->getBrand($id);
+                if(!empty($brandProducts)){
+                    $this->view->showBrandProducts($brandProducts , $brand);
+                }else{
+                    $brands = $this->model->getAllBrands();
+                    $this->view->showBrands($brands, "No hay productos de la marca seleccionada.");
+                }
+            
         }
 
         function addBrand() {
