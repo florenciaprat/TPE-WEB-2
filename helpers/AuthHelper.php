@@ -1,28 +1,23 @@
 <?php
 
-class AuthHelper {
+class AuthHelper
+{
     public function __construct(){
         session_start();
     }
 
-/**
-* Verifica que el user este logueado y si no lo está
-* lo redirige al login.
-*/
-    public function checkLoggedIn() {
-        if (!isset($_SESSION['IS_LOGGED'])){
+    public function checkLoggedIn()
+    {
+        if (!isset($_SESSION['IS_LOGGED'])) {
             session_start();
             header("Location: " . BASE_URL . 'login');
-                die();
+            die();
         }
-        
     }
 
-    
+
     public function getUser(){
         return $_SESSION;
+        var_dump($_SESSION);
     }
-
-
-
 }

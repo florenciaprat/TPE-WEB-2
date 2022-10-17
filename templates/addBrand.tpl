@@ -1,5 +1,3 @@
-{include file="header.tpl"}
-
 <div class="col-md-4">
     <h2>{$titulo}</h2>
     <form class ="form-alta" action="add-brand" method="POST">
@@ -10,5 +8,3 @@
         <div class="formulario"><button class="btn btn-primary"> Add </button></div>
     </form>
 </div>
-
-{include file="footer.tpl"}

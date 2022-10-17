@@ -25,9 +25,6 @@
                             {if !isset($smarty.session.USER_ID)}
                                 <a class="nav-link" href="login" >Login</a>
                               {else}
-                                <a class="nav-link" href="form" >Add product</a>
-                                <a class="nav-link" href="show-form" >Add brand</a>
-
                                 <a class="nav-link" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>                 
                               {/if}
             

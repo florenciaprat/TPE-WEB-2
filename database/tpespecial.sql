@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2022 a las 00:09:54
+-- Tiempo de generación: 17-10-2022 a las 02:48:54
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -40,16 +40,8 @@ CREATE TABLE `brands` (
 --
 
 INSERT INTO `brands` (`brand_ID`, `name`, `country`, `foundation`, `website`) VALUES
-(1, 'ACF', 'Argentina', 2005, 'acfmascaras.com'),
 (2, 'Bagovit', 'Argentina', 1934, 'bagovit.com.ar'),
-(3, 'Bioderma', 'France', 1977, 'bioderma.com.ar'),
-(4, 'Cerave', 'USA', 2005, 'cerave.com.ar'),
-(5, 'Cetaphil', 'USA', 1947, 'cetaphil.com.ar'),
-(6, 'Dermaglos', 'Spain', 1923, 'dermaglos.com.ar'),
-(7, 'Eucerin', 'Germany ', 1902, 'eucerin.com.ar'),
 (8, 'Garnier', 'France', 1904, 'garnier.com.ar'),
-(9, 'Isdin', 'Spain', 1977, 'isdin.com.ar'),
-(10, 'L\'orealParis', 'France', 1909, 'lorealparis.com.ar'),
 (12, 'Neutrogena', 'USA', 1930, 'neutrogena.com.ar'),
 (13, 'Nivea', 'Germany', 1911, 'nivea.com.ar');
 
@@ -72,37 +64,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_ID`, `name`, `milliliters`, `price`, `brand_ID`) VALUES
-(2, 'Serum Revitalif', 30, 2995, 10),
+(2, 'Serúm Revitalif', 30, 2995, 2),
 (3, 'Agua micelar', 400, 3.585, 8),
-(4, 'Loción hidratante', 573, 2400, 4),
 (5, 'Gel facial exfoliante', 30, 1540, 13),
-(6, 'Crema Humectante', 250, 3899, 5),
 (7, 'Agua micelar bifasica', 200, 2670, 12),
-(8, 'Photoderm SPF 50+', 50, 5400, 3),
-(10, 'Ampollas de melatonina', 10, 2290, 1),
-(11, 'Loción hidratante', 60, 4000, 1),
-(12, 'Aceite limpiador', 413, 2990, 1),
 (13, 'Crema Antiage Hidratante', 55, 2878, 2),
-(14, 'Bagovit A', 200, 2149, 2),
-(15, 'Crema contorno de ojos', 14, 2388, 4),
-(16, 'Serum Iluminador Vit C', 30, 2198, 8),
-(17, 'Gel Limpiador PureActive', 400, 1824, 8),
-(18, 'Hydro Boost', 50, 2335, 12),
-(19, 'Face Care Antiedad', 100, 885, 12),
-(22, 'Crema Facial Glicoisdin', 50, 8127, 9),
-(23, 'Fotoprotector compacto', 10, 5273, 9),
-(24, 'Emulsion facial', 70, 2180, 6),
-(25, 'Crema Protectora facial', 50, 2150, 6),
-(26, 'Revitalift crema facial', 50, 2055, 10),
-(27, 'Hidra-total 5', 50, 1409, 10),
-(28, 'Tratamiento anti acne', 30, 6650, 3),
-(29, 'Pro ac control hidratante', 118, 4561, 5),
-(30, 'Fluido facial matificante', 60, 2933, 7),
-(31, 'Serum triple efecto', 30, 7075, 7),
 (32, 'Serum antimanchas', 30, 2735, 13),
-(33, 'Rose Care crema hidratante', 50, 965, 13),
-(35, 'Mist facial refrescante', 200, 896, 13),
-(36, 'Crema facial spft', 100, 596, 13);
+(59, 'Crema reparadora', 120, 1200, 12);
 
 -- --------------------------------------------------------
 
@@ -155,13 +123,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `brands`
 --
 ALTER TABLE `brands`
-  MODIFY `brand_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `brand_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `users`

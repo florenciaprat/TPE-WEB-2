@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 19:54:40
+/* Smarty version 4.2.1, created on 2022-10-15 16:09:15
   from 'C:\xampp\htdocs\Skincare\templates\editProduct.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6349a2607022b2_97776973',
+  'unifunc' => 'content_634abf0b5ab078_79631968',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e21786db0834bb1c73ccb64815edebbf17f335b6' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\editProduct.tpl',
-      1 => 1665770073,
+      1 => 1665842942,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_6349a2607022b2_97776973 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634abf0b5ab078_79631968 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="col-md-4">
@@ -39,7 +39,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
 " type="number" name="price" id="price" required></div>
         <div class="formulario"><p>Brand: </p><select name="brand_ID" id="brand_ID">
             <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['marca']->value, 'brand');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['brands']->value, 'brand');
 $_smarty_tpl->tpl_vars['brand']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['brand']->value) {
 $_smarty_tpl->tpl_vars['brand']->do_else = false;

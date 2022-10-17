@@ -1,20 +1,25 @@
 <?php
 require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
 
-class PublicView{
+class View{
     private $smarty;
 
-    function __construct() {
+    function __construct($user) {
         $this->smarty = new Smarty();
+        $this->smarty->assign('user', $user);
+
         
     }
-    function showProducts($products){
+    function showProducts($products, $brands){
+        $this->smarty->assign('titulo', 'Add your product');
         $this->smarty->assign('products', $products);
+        $this->smarty->assign('brands', $brands);
         $this->smarty->display('templates/productList.tpl');
     }
     function showBrands($brands, $error){
-        $this->smarty->assign('cafe', $brands);
+        $this->smarty->assign('brands', $brands);
         $this->smarty->assign('error', $error);
+        $this->smarty->assign('titulo', 'Add your brand');
         $this->smarty->display('templates/brandList.tpl');
         
     }
@@ -27,20 +32,17 @@ class PublicView{
         header("Location: ".BASE_URL."home");
     }
 
-    function showBrandProducts($brandProducts){
+    function showBrandProducts($brandProducts, $brand){
+        $this->smarty->assign('brand', $brand);
         $this->smarty->assign('products', $brandProducts);
         $this->smarty->display('templates/brandProducts.tpl');
     }    
-   function getBrand($brand){
-    $this->smarty->assign('titulo', 'Add your product');
-    $this->smarty->assign('marquita', $brand);
-    $this->smarty->display('templates/formAdd.tpl');
-   }
+  
   
    function editProduct($product, $brands){
     $this->smarty->assign('titulo', 'Edit the product');
     $this->smarty->assign('product', $product);
-    $this->smarty->assign('marca', $brands);
+    $this->smarty->assign('brands', $brands);
     $this->smarty->display('./templates/editProduct.tpl');
 
    }
@@ -56,10 +58,7 @@ class PublicView{
     $this->smarty->assign("error", $error);
     $this->smarty->display('templates/login.tpl');
 }
-function showForm(){
-    $this->smarty->assign('titulo', 'Add your brand');
-    $this->smarty->display('templates/addBrand.tpl');
-}
+
 function showErrorDefault(){
     $this->smarty->assign('error', '404 page not found');
     $this->smarty->display('template/errordefault.tpl');

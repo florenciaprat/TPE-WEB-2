@@ -26,13 +26,15 @@
         {if !isset($smarty.session.USER_ID)} 
           {else}
           <td><a class="btn btn-outline-danger" href="delete-product/{$product->product_ID}">Delete</a> </td>
-          <td><a class="btn btn-outline-success" href="edit-form/{$product->product_ID}">Edit</a></td>
+          <td><a class="btn btn-outline-success" href="edit-product-form/{$product->product_ID}">Edit</a></td>
         {/if}
         
         </tr>
     {/foreach}
   </tbody>
 </table>
-
-
+{if !isset($smarty.session.USER_ID)} 
+  {else}
+  {include file="formAdd.tpl"}
+{/if}
 {include file="footer.tpl"}

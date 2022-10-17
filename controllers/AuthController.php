@@ -1,6 +1,6 @@
 <?php
 require_once './models/UserModel.php';
-require_once './views/PublicView.php';
+require_once './views/View.php';
 
 class AuthController{
     private $model;
@@ -9,7 +9,7 @@ class AuthController{
     
     function __construct(){
         $this->model= new UserModel();
-        $this->view= new PublicView();
+        $this->view= new View();
     }
 
     
@@ -19,14 +19,11 @@ class AuthController{
 
 
     public function validateUser() {
-        // toma los datos del form
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        // busco el usuario por email
         $user = $this->model->getUserByEmail($email);
 
-        // verifico que el usuario existe y que las contraseñas son iguales
         if ($user && password_verify($password, $user->password)) {
 
             

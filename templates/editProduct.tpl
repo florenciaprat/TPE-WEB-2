@@ -7,7 +7,7 @@
         <div class="formulario"><p>Milliliters: </p><input value="{$product->milliliters}" type="number" name="milliliters" id="milliliters" required></div>
         <div class="formulario"><p>Price: </p><input value="{$product->price}" type="number" name="price" id="price" required></div>
         <div class="formulario"><p>Brand: </p><select name="brand_ID" id="brand_ID">
-            {foreach from=$marca item=$brand}
+            {foreach from=$brands item=$brand}
                 <option class="option" value="{$brand->brand_ID}">{$brand->name}</option>
             {/foreach}
             </select>

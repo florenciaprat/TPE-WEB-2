@@ -1,31 +1,27 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 19:16:51
+/* Smarty version 4.2.1, created on 2022-10-15 15:58:15
   from 'C:\xampp\htdocs\Skincare\templates\formAdd.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63499983d138b0_25499388',
+  'unifunc' => 'content_634abc77b9e3f7_34650672',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '93ff2ac0a2f6696844cdf536637c2a8e8f6d9380' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\formAdd.tpl',
-      1 => 1665767783,
+      1 => 1665842292,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:header.tpl' => 1,
-    'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_63499983d138b0_25499388 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-<div class="col-md-4">
+function content_634abc77b9e3f7_34650672 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="col-md-4">
     <h2><?php echo $_smarty_tpl->tpl_vars['titulo']->value;?>
 </h2>
     <form class ="form-alta" action="add-product" method="POST">
@@ -34,7 +30,7 @@ $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_sm
         <div class="formulario"><input placeholder="price" type="number" name="price" id="price" required></div>
         <div class="formulario"><select name="brand_ID" id="">
             <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['marquita']->value, 'brand');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['brands']->value, 'brand');
 $_smarty_tpl->tpl_vars['brand']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['brand']->value) {
 $_smarty_tpl->tpl_vars['brand']->do_else = false;
@@ -50,6 +46,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         <div class="formulario"><button type="submit" class="btn btn-primary"> Add </button></div>
     </form>
 </div>
-<?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-}
+<?php }
 }

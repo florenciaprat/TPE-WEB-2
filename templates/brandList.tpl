@@ -1,10 +1,6 @@
 {include file="header.tpl"}
 
-<!-- tabla de marcas -->
-  <div>
-{$error}
-</div>
-
+  <div> {$error} </div>
 
 <table class="table">
   <thead>
@@ -21,7 +17,7 @@
       </tr>
   </thead>
   <tbody>
-    {foreach from=$cafe item=$brand}
+    {foreach from=$brands item=$brand}
         <tr>
         <th scope="row"><a href="view-brand-products/{$brand->brand_ID}" class="mylists"> {$brand->name} </a></th>
         <td>{$brand->country}</td>
@@ -33,8 +29,12 @@
           <td><a class="btn btn-outline-success" href="edit-brand-form/{$brand->brand_ID}">Edit</a></td>
         {/if}
         </tr>
-    {/foreach}
+    {/foreach} 
   </tbody>
 </table>
+{if !isset($smarty.session.USER_ID)}
+  {else}
+    {include file="addBrand.tpl"}
+{/if}
 
 {include file="footer.tpl"}

@@ -5,21 +5,13 @@ require_once './controllers/BrandController.php';
 require_once './controllers/AuthController.php';
 
 
-//------------------------------esto se queda
-//define constantes
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
     $action = 'home';
     if(!empty($_GET['action'])){
         $action = $_GET['action'];
     }
    $params = explode('/', $action);
-//-------------------------------------------
 
-
-
-
-
-//TABLA DE RUTEO
    switch($params[0]){
     case 'home':
         $productController = new ProductController();
@@ -49,15 +41,11 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
         $productController = new ProductController();
         $productController->addProduct();
         break;
-    case 'form':
-        $brandController = new BrandController();
-        $brandController->getId();
-        break;
     case 'add-brand':
         $brandController = new BrandController();
         $brandController->addBrand();
         break;
-    case 'edit-form':
+    case 'edit-product-form':
         $productController = new ProductController();
         $productController->updateProduct($params[1]);
         break;
@@ -68,10 +56,6 @@ define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
     case 'brands':
         $brandController = new BrandController();
         $brandController->showBrands();
-        break;
-     case 'show-form':
-        $brandController = new BrandController();
-        $brandController->showForm();
         break;
     case 'delete-brand':
         $brandController = new BrandController();

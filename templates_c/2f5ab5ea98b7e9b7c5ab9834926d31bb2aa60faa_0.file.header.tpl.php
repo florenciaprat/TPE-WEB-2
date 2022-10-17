@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-14 19:16:50
+/* Smarty version 4.2.1, created on 2022-10-15 15:54:01
   from 'C:\xampp\htdocs\Skincare\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6349998260cbf6_83513483',
+  'unifunc' => 'content_634abb799612e8_63409085',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f5ab5ea98b7e9b7c5ab9834926d31bb2aa60faa' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Skincare\\templates\\header.tpl',
-      1 => 1665767806,
+      1 => 1665842039,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6349998260cbf6_83513483 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634abb799612e8_63409085 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
     <html lang="en">
     <head>
@@ -49,9 +49,6 @@ css/styles.css" rel="stylesheet">
                             <?php if (!(isset($_SESSION['USER_ID']))) {?>
                                 <a class="nav-link" href="login" >Login</a>
                               <?php } else { ?>
-                                <a class="nav-link" href="form" >Add product</a>
-                                <a class="nav-link" href="show-form" >Add brand</a>
-
                                 <a class="nav-link" href="logout">Logout (<?php echo $_SESSION['USER_EMAIL'];?>
 )</a>                 
                               <?php }?>
