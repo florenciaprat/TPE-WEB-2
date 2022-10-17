@@ -4,9 +4,8 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
 class View{
     private $smarty;
 
-    function __construct($user) {
+    function __construct() {
         $this->smarty = new Smarty();
-        $this->smarty->assign('user', $user);
 
         
     }

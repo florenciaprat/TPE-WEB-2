@@ -38,3 +38,4 @@
   {include file="formAdd.tpl"}
 {/if}
 {include file="footer.tpl"}
+
