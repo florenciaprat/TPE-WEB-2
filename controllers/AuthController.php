@@ -1,15 +1,17 @@
 <?php
 require_once './models/UserModel.php';
 require_once './views/View.php';
+require_once './helpers/AuthHelper.php';
 
 class AuthController{
     private $model;
     private $view;
-    
+    private $authHelper;
     
     function __construct(){
+        $this->authHelper= new AuthHelper();
         $this->model= new UserModel();
-        $this->view= new View();
+        $this->view= new View($this->authHelper->getUser());
     }
 
     

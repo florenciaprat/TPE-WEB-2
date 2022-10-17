@@ -18,6 +18,5 @@ class AuthHelper
 
     public function getUser(){
         return $_SESSION;
-        var_dump($_SESSION);
     }
 }
